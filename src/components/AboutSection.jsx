@@ -139,45 +139,48 @@ export default function AboutSection() {
               ))}
             </div>
 
-            <motion.button
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.6,
-              }}
-              className="
-                mt-10
-                bg-white
-                border
-                border-slate-200
-                px-8
-                py-4
-                rounded-xl
-                shadow-sm
-                hover:shadow-lg
-                hover:-translate-y-1
-                transition-all
-                duration-300
-              "
-            >
-                <NavLink
-                to="/about"
-                className="text-slate-400 hover:text-white transition"
-              >
-                 More About Me →
-              </NavLink>
-             
-            </motion.button>
+            <motion.div
+  initial={{
+    opacity: 0,
+    y: 20,
+  }}
+  whileInView={{
+    opacity: 1,
+    y: 0,
+  }}
+  viewport={{
+    once: true,
+  }}
+  transition={{
+    duration: 0.6,
+    delay: 0.6,
+  }}
+>
+  <NavLink
+    to="/about"
+    className="
+      inline-block
+      mt-10
+      bg-white
+      border
+      border-slate-200
+      px-8
+      py-4
+      rounded-xl
+      shadow-sm
+      text-slate-700
+      font-medium
+      hover:bg-blue-600
+      hover:text-white
+      hover:shadow-lg
+      hover:-translate-y-1
+      transition-all
+      duration-300
+    "
+  >
+    More About Me →
+  </NavLink>
+</motion.div>
 
           </motion.div>
 
