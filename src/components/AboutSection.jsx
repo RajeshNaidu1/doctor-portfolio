@@ -41,7 +41,7 @@ export default function AboutSection() {
             className="relative"
           >
             <img
-              src="/clinic.jpg.avif"
+              src={`${import.meta.env.BASE_URL}clinic.jpg.avif`}
               alt="Clinic"
               className="rounded-3xl shadow-xl"
             />
