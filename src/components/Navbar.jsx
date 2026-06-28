@@ -76,7 +76,7 @@ export default function Navbar() {
 
 <NavLink to="/" className="flex items-center">
   <img
-    src="/logo.png"
+    src={`${import.meta.env.BASE_URL}logo.png`}
     alt="Uday's Health Care Logo"
     className="
       h-14

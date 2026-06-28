@@ -1,5 +1,4 @@
 import {
-  BrowserRouter,
   Routes,
   Route,
   useLocation,
@@ -32,12 +31,6 @@ function AnimatedRoutes() {
   );
 }
 
-function App() {
-  return (
-    <BrowserRouter>
-      <AnimatedRoutes />
-    </BrowserRouter>
-  );
+export default function App() {
+  return <AnimatedRoutes />;
 }
-
-export default App;

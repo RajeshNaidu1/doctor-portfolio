@@ -38,7 +38,7 @@ export default function About() {
 
             <div>
               <img
-                src="/doctor.jpeg"
+                src={`${import.meta.env.BASE_URL}doctor.jpeg`}
                 alt="Doctor"
                 className="rounded-3xl shadow-2xl w-full"
               />

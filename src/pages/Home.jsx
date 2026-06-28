@@ -27,8 +27,8 @@ export default function Home() {
   <div
     className="absolute inset-0 bg-cover bg-center"
     style={{
-      backgroundImage: "url('/doctor.jpeg')",
-    }}
+  backgroundImage: `url(${import.meta.env.BASE_URL}doctor.jpeg)`,
+}}
   />
 
   {/* Dark Overlay */}
