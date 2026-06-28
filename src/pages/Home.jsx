@@ -5,12 +5,16 @@ import AboutSection from "../components/AboutSection";
 import ContactStrip from "../components/ContactStrip";
 import PageWrapper from "../components/PageWrapper";
 import Footer from "../components/Footer";
+import { useTranslation } from "react-i18next";
 
 const whatsappLink =
-  "https://wa.me/917386292575?text=Hello%20Doctor,%0A%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AName:%20%0APhone:%20%0APreferred%20Date:%20%0APreferred%20Time:%20%0AReason%20for%20Consultation:%20";
+  "https://wa.me/916303594165?text=Hi";
 
+const bookingLink =
+  "https://book.healthplix.com/dr-dr-yerramsetty-uday-kumar-consulting-physician-yendada-visak_791638";
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <PageWrapper>
       <Navbar />
@@ -36,29 +40,29 @@ export default function Home() {
     <div className="max-w-3xl text-white">
 
       <div className="inline-block bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full mb-8">
-        CONSULTANT PHYSICIAN
+        {t("hero.badge")}
       </div>
 
       <h1 className="text-6xl md:text-8xl font-bold leading-tight">
-        Dr. Uday
+        {t("hero.title")}
       </h1>
 
       <div className="w-24 h-1 bg-blue-400 my-8"></div>
 
       <p className="text-2xl md:text-3xl leading-relaxed">
-        Dedicated to compassionate,
-        evidence-based medical care.
+        {t("hero.subtitle")}
       </p>
 
       <p className="mt-6 text-lg text-white/90 max-w-xl">
-        With over a decade of experience providing
-        personalized healthcare and long-term wellness support.
+        {t("hero.description")}
       </p>
 
       <div className="flex flex-wrap gap-4 mt-10">
 
         <a
-          href={whatsappLink}
+          href={bookingLink}
+          target="_blank"
+          rel="noreferrer"
           className="
             bg-blue-600
             hover:bg-blue-700
@@ -68,7 +72,7 @@ export default function Home() {
             transition
           "
         >
-          Book Appointment
+          {t("hero.button1")}
         </a>
 
         <a
@@ -82,7 +86,7 @@ export default function Home() {
             rounded-xl
           "
         >
-          Learn More
+          {t("hero.button2")}
         </a>
 
       </div>

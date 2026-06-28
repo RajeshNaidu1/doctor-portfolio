@@ -9,13 +9,27 @@ import {
   FaUserDoctor,
 } from "react-icons/fa6";
 
+import { useTranslation } from "react-i18next";
+
 export default function About() {
+  const { t } = useTranslation();
+
+  const consultationAreas = [
+    t("about.diabetes"),
+    t("about.hypertension"),
+    t("about.generalMedicine"),
+    t("about.preventiveCare"),
+    t("about.healthCheckups"),
+    t("about.lifestyle"),
+    t("about.internalMedicine"),
+    t("about.chronicDisease"),
+  ];
+
   return (
     <PageWrapper>
       <Navbar />
 
       <section className="pt-40 pb-24 bg-gradient-to-b from-blue-50 to-white min-h-screen">
-
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Hero Section */}
@@ -33,21 +47,15 @@ export default function About() {
             <div>
 
               <p className="uppercase tracking-widest text-blue-600 font-semibold">
-                About Me
+                {t("about.heroTag")}
               </p>
 
               <h1 className="text-6xl font-bold mt-4 text-slate-900">
-                Compassionate Healthcare,
-                Backed by Experience
+                {t("about.heroTitle")}
               </h1>
 
               <p className="mt-8 text-lg text-slate-600 leading-relaxed">
-                Dedicated physician committed to providing
-                patient-centered healthcare through evidence-based
-                medicine, preventive care, and personalized treatment plans.
-
-                My goal is to help patients achieve better health outcomes
-                while building long-term trust and confidence.
+                {t("about.heroDescription")}
               </p>
 
               <div className="grid grid-cols-2 gap-6 mt-10">
@@ -58,7 +66,7 @@ export default function About() {
                   </h3>
 
                   <p className="text-slate-600 mt-2">
-                    Years Experience
+                    {t("about.yearsExperience")}
                   </p>
                 </div>
 
@@ -68,7 +76,7 @@ export default function About() {
                   </h3>
 
                   <p className="text-slate-600 mt-2">
-                    Patients Treated
+                    {t("about.patients")}
                   </p>
                 </div>
 
@@ -83,7 +91,7 @@ export default function About() {
           <div className="mt-24">
 
             <h2 className="text-4xl font-bold text-center mb-12">
-              Qualifications & Education
+              {t("about.qualifications")}
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -96,7 +104,7 @@ export default function About() {
                 </h3>
 
                 <p className="mt-3 text-slate-600">
-                  Bachelor of Medicine & Surgery
+                  {t("about.mbbs")}
                 </p>
               </div>
 
@@ -108,7 +116,7 @@ export default function About() {
                 </h3>
 
                 <p className="mt-3 text-slate-600">
-                  Internal Medicine
+                  {t("about.md")}
                 </p>
               </div>
 
@@ -120,7 +128,7 @@ export default function About() {
                 </h3>
 
                 <p className="mt-3 text-slate-600">
-                  Advanced Clinical Practice
+                  {t("about.fellowship")}
                 </p>
               </div>
 
@@ -133,7 +141,7 @@ export default function About() {
           <div className="mt-24">
 
             <h2 className="text-4xl font-bold text-center mb-12">
-              Languages Spoken
+              {t("about.languagesTitle")}
             </h2>
 
             <div className="max-w-3xl mx-auto">
@@ -144,22 +152,22 @@ export default function About() {
                   <FaLanguage className="text-blue-600 text-3xl" />
 
                   <h3 className="text-2xl font-bold">
-                    Communication
+                    {t("about.communication")}
                   </h3>
                 </div>
 
                 <div className="flex flex-wrap justify-center gap-4">
 
                   <span className="bg-blue-100 text-blue-700 px-5 py-3 rounded-full">
-                    English
+                    {t("about.english")}
                   </span>
 
                   <span className="bg-blue-100 text-blue-700 px-5 py-3 rounded-full">
-                    Telugu
+                    {t("about.telugu")}
                   </span>
 
                   <span className="bg-blue-100 text-blue-700 px-5 py-3 rounded-full">
-                    Hindi
+                    {t("about.hindi")}
                   </span>
 
                 </div>
@@ -170,26 +178,17 @@ export default function About() {
 
           </div>
 
-          {/* Areas of Consultation */}
+          {/* Consultation Areas */}
 
           <div className="mt-24">
 
             <h2 className="text-4xl font-bold text-center mb-12">
-              Consultation Areas
+              {t("about.consultationAreas")}
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-              {[
-                "Diabetes",
-                "Hypertension",
-                "General Medicine",
-                "Preventive Care",
-                "Health Checkups",
-                "Lifestyle Disorders",
-                "Internal Medicine",
-                "Chronic Disease Management",
-              ].map((item, index) => (
+              {consultationAreas.map((item, index) => (
                 <div
                   key={index}
                   className="
@@ -201,6 +200,7 @@ export default function About() {
                     hover:-translate-y-2
                     hover:shadow-2xl
                     transition-all
+                    duration-300
                   "
                 >
                   {item}
@@ -212,7 +212,6 @@ export default function About() {
           </div>
 
         </div>
-
       </section>
 
       <Footer />

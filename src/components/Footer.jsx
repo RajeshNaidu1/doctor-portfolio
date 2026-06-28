@@ -5,7 +5,11 @@ import {
   FaLocationDot,
 } from "react-icons/fa6";
 
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-slate-900 text-white mt-20">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -20,9 +24,7 @@ export default function Footer() {
             </h2>
 
             <p className="mt-4 text-slate-400 leading-relaxed">
-              Dedicated to providing compassionate,
-              evidence-based healthcare and personalized
-              treatment plans for every patient.
+              {t("footer.description")}
             </p>
           </div>
 
@@ -30,7 +32,7 @@ export default function Footer() {
 
           <div>
             <h3 className="text-xl font-semibold mb-5">
-              Quick Links
+              {t("footer.quickLinks")}
             </h3>
 
             <div className="flex flex-col gap-3">
@@ -39,35 +41,35 @@ export default function Footer() {
                 to="/"
                 className="text-slate-400 hover:text-white transition"
               >
-                Home
+                {t("navbar.home")}
               </NavLink>
 
               <NavLink
                 to="/about"
                 className="text-slate-400 hover:text-white transition"
               >
-                About
+                {t("navbar.about")}
               </NavLink>
 
               <NavLink
                 to="/experience"
                 className="text-slate-400 hover:text-white transition"
               >
-                Experience
+                {t("navbar.experience")}
               </NavLink>
 
               <NavLink
                 to="/specialities"
                 className="text-slate-400 hover:text-white transition"
               >
-                Specialities
+                {t("navbar.specialities")}
               </NavLink>
 
               <NavLink
                 to="/contact"
                 className="text-slate-400 hover:text-white transition"
               >
-                Contact
+                {t("navbar.contact")}
               </NavLink>
 
             </div>
@@ -77,38 +79,56 @@ export default function Footer() {
 
           <div>
             <h3 className="text-xl font-semibold mb-5">
-              Contact
+              {t("footer.contact")}
             </h3>
 
             <div className="space-y-4 text-slate-400">
 
               <div className="flex items-center gap-3">
-                <FaPhone />
-                <span>+91 XXXXX XXXXX</span>
-              </div>
+  <FaPhone />
+
+  <a
+    href="tel:+916303594165"
+    className="hover:text-blue-400 hover:underline transition"
+  >
+    +91 6303594165
+  </a>
+</div>
+
+<div className="flex items-center gap-3">
+  <FaEnvelope />
+
+  <a
+    href="mailto:doctor@email.com"
+    className="hover:text-blue-400 hover:underline transition"
+  >
+    doctor@email.com
+  </a>
+</div>
 
               <div className="flex items-center gap-3">
-                <FaEnvelope />
-                <span>doctor@email.com</span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <FaLocationDot />
-                <span>Bangalore, Karnataka</span>
-              </div>
+  <FaLocationDot />
+  <a
+    href="https://www.google.com/maps/search/Uday's+Health+Clinic/@12.989836,77.6484,14z?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-blue-400 transition underline-offset-2 hover:underline"
+  >
+    Yendada, Visakhapatnam
+  </a>
+</div>
 
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Section */}
+        {/* Bottom */}
 
         <div className="border-t border-slate-700 mt-12 pt-8 text-center text-slate-500">
-
           © {new Date().getFullYear()} Rajesh Naidu.
-          All Rights Reserved.
-
+          {" "}
+          {t("footer.copyright")}
         </div>
 
       </div>

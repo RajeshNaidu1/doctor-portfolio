@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
 import { FaCircleCheck } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function AboutSection() {
+  const { t } = useTranslation();
   const points = [
-    "Patient-centered approach",
-    "Evidence-based treatments",
-    "Compassionate & personalized care",
-    "Continuous learning & innovation",
-  ];
-
+  t("aboutSection.point1"),
+  t("aboutSection.point2"),
+  t("aboutSection.point3"),
+  t("aboutSection.point4"),
+];
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -59,11 +60,11 @@ export default function AboutSection() {
               "
             >
               <p className="text-lg font-semibold">
-                Your Health
+                {t("aboutSection.imageTitle1")}
               </p>
 
               <p className="text-lg font-semibold">
-                is My Priority
+                {t("aboutSection.imageTitle2")}
               </p>
             </div>
           </motion.div>
@@ -90,23 +91,19 @@ export default function AboutSection() {
             }}
           >
             <p className="uppercase tracking-widest text-blue-600 font-semibold mb-4">
-              About Me
+              {t("aboutSection.smallTitle")}
             </p>
 
             <h2 className="text-5xl font-bold text-slate-900 leading-tight">
-              Committed to Your
+              {t("aboutSection.title")}
 
               <span className="block text-blue-600">
-                Health & Well-being
+                {t("aboutSection.titleBlue")}
               </span>
             </h2>
 
             <p className="mt-8 text-lg text-slate-600 leading-relaxed">
-              I believe in building long-term
-              relationships with my patients based on
-              trust, respect, and open communication.
-              My focus is on preventive care and
-              evidence-based treatment plans.
+              {t("aboutSection.description")}
             </p>
 
             <div className="mt-10 space-y-4">
@@ -178,7 +175,7 @@ export default function AboutSection() {
       duration-300
     "
   >
-    More About Me →
+    {t("aboutSection.button")}
   </NavLink>
 </motion.div>
 

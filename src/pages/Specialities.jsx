@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PageWrapper from "../components/PageWrapper";
@@ -13,85 +15,83 @@ import {
 } from "react-icons/fa6";
 
 export default function Specialities() {
+  const { t } = useTranslation();
+
   const [selectedSpecialty, setSelectedSpecialty] = useState(null);
+  const bookingLink =
+  "https://book.healthplix.com/dr-dr-yerramsetty-uday-kumar-consulting-physician-yendada-visak_791638";
   const whatsappLink =
-  "https://wa.me/917386292575?text=Hello%20Doctor,%0A%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AName:%20%0APhone:%20%0APreferred%20Date:%20%0APreferred%20Time:%20%0AReason%20for%20Consultation:%20";
+  "https://wa.me/916303594165?text=Hi";
   const specialties = [
     {
       icon: <FaHeartPulse />,
-      title: "Preventive Care",
-      description:
-        "Comprehensive health screenings, vaccinations, wellness planning, and disease prevention strategies.",
+      title: t("specialities.preventive.title"),
+      description: t("specialities.preventive.description"),
       details: [
-        "Annual health checkups",
-        "Vaccination guidance",
-        "Lifestyle counseling",
-        "Early disease detection",
+        t("specialities.preventive.d1"),
+        t("specialities.preventive.d2"),
+        t("specialities.preventive.d3"),
+        t("specialities.preventive.d4"),
       ],
     },
 
     {
       icon: <FaStethoscope />,
-      title: "General Medicine",
-      description:
-        "Diagnosis and treatment of common illnesses with a focus on long-term patient wellbeing.",
+      title: t("specialities.general.title"),
+      description: t("specialities.general.description"),
       details: [
-        "Fever and infections",
-        "Respiratory illnesses",
-        "Digestive disorders",
-        "Routine medical care",
+        t("specialities.general.d1"),
+        t("specialities.general.d2"),
+        t("specialities.general.d3"),
+        t("specialities.general.d4"),
       ],
     },
 
     {
       icon: <FaUserDoctor />,
-      title: "Internal Medicine",
-      description:
-        "Specialized care for chronic diseases, complex medical conditions, and adult healthcare.",
+      title: t("specialities.internal.title"),
+      description: t("specialities.internal.description"),
       details: [
-        "Diabetes management",
-        "Hypertension care",
-        "Thyroid disorders",
-        "Adult healthcare",
+        t("specialities.internal.d1"),
+        t("specialities.internal.d2"),
+        t("specialities.internal.d3"),
+        t("specialities.internal.d4"),
       ],
     },
 
     {
       icon: <FaKitMedical />,
-      title: "Health Checkups",
-      description:
-        "Routine medical evaluations and personalized health assessments for early detection.",
+      title: t("specialities.checkups.title"),
+      description: t("specialities.checkups.description"),
       details: [
-        "Executive health packages",
-        "Lab investigations",
-        "Risk assessment",
-        "Preventive screening",
+        t("specialities.checkups.d1"),
+        t("specialities.checkups.d2"),
+        t("specialities.checkups.d3"),
+        t("specialities.checkups.d4"),
       ],
     },
 
     {
       icon: <FaNotesMedical />,
-      title: "Chronic Disease Management",
-      description:
-        "Long-term management plans for diabetes, hypertension, thyroid disorders, and more.",
+      title: t("specialities.chronic.title"),
+      description: t("specialities.chronic.description"),
       details: [
-        "Long-term monitoring",
-        "Medication management",
-        "Lifestyle modifications",
-        "Regular follow-ups",
+        t("specialities.chronic.d1"),
+        t("specialities.chronic.d2"),
+        t("specialities.chronic.d3"),
+        t("specialities.chronic.d4"),
       ],
     },
 
     {
       icon: <FaHospitalUser />,
-      title: "Patient Consultation",
-      description:
-        "Personalized consultations focused on accurate diagnosis, treatment planning, and recovery.",
+      title: t("specialities.consultation.title"),
+      description: t("specialities.consultation.description"),
       details: [
-        "Personalized treatment plans",
-        "Second opinions",
-        "Medical counseling",
-        "Follow-up consultations",
+        t("specialities.consultation.d1"),
+        t("specialities.consultation.d2"),
+        t("specialities.consultation.d3"),
+        t("specialities.consultation.d4"),
       ],
     },
   ];
@@ -104,27 +104,21 @@ export default function Specialities() {
 
         <div className="max-w-7xl mx-auto px-6">
 
-          {/* Header */}
-
           <div className="text-center mb-20">
 
             <p className="uppercase tracking-widest text-blue-600 font-semibold">
-              Areas of Expertise
+              {t("specialities.subtitle")}
             </p>
 
             <h1 className="text-4xl md:text-6xl font-bold mt-4 text-slate-900">
-              Medical Specialities
+              {t("specialities.heading")}
             </h1>
 
             <p className="mt-6 text-lg text-slate-600 max-w-3xl mx-auto">
-              Providing comprehensive healthcare services
-              with a focus on prevention, diagnosis,
-              treatment, and long-term patient wellness.
+              {t("specialities.description")}
             </p>
 
           </div>
-
-          {/* Cards */}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -174,22 +168,15 @@ export default function Specialities() {
 
                 <button
                   onClick={() => setSelectedSpecialty(item)}
-                  className="
-                    mt-8
-                    text-blue-600
-                    font-semibold
-                    hover:translate-x-1
-                    transition
-                  "
+                  className="mt-8 text-blue-600 font-semibold hover:translate-x-1 transition"
                 >
-                  Learn More →
+                  {t("specialities.learnMore")} →
                 </button>
+
               </div>
             ))}
 
           </div>
-
-          {/* CTA Section */}
 
           <div
             className="
@@ -197,22 +184,21 @@ export default function Specialities() {
               bg-blue-600
               rounded-3xl
               text-white
-              p-8 md:p-12
+              p-8
+              md:p-12
               text-center
             "
           >
             <h2 className="text-3xl md:text-4xl font-bold">
-              Need Medical Consultation?
+              {t("specialities.ctaTitle")}
             </h2>
 
             <p className="mt-4 text-blue-100 max-w-2xl mx-auto">
-              Schedule an appointment today and receive
-              personalized healthcare guidance tailored
-              to your needs.
+              {t("specialities.ctaDescription")}
             </p>
 
             <a
-              href={whatsappLink}
+              href={bookingLink}
               target="_blank"
               rel="noreferrer"
               className="
@@ -228,37 +214,20 @@ export default function Specialities() {
                 transition
               "
             >
-              Book Appointment
+              {t("specialities.bookAppointment")}
             </a>
+
           </div>
 
         </div>
 
-        {/* Modal */}
-
         {selectedSpecialty && (
           <div
-            className="
-              fixed
-              inset-0
-              bg-black/50
-              flex
-              items-center
-              justify-center
-              z-[100]
-              p-6
-            "
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-[100] p-6"
             onClick={() => setSelectedSpecialty(null)}
           >
             <div
-              className="
-                bg-white
-                rounded-3xl
-                p-8 md:p-10
-                max-w-lg
-                w-full
-                shadow-2xl
-              "
+              className="bg-white rounded-3xl p-8 md:p-10 max-w-lg w-full shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <h2 className="text-3xl font-bold text-slate-900">
@@ -270,38 +239,19 @@ export default function Specialities() {
               </p>
 
               <div className="mt-8 space-y-4">
-
                 {selectedSpecialty.details.map((detail, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-3"
-                  >
-                    <span className="text-blue-600 font-bold">
-                      ✓
-                    </span>
-
-                    <span className="text-slate-700">
-                      {detail}
-                    </span>
+                  <div key={index} className="flex items-center gap-3">
+                    <span className="text-blue-600 font-bold">✓</span>
+                    <span className="text-slate-700">{detail}</span>
                   </div>
                 ))}
-
               </div>
 
               <button
                 onClick={() => setSelectedSpecialty(null)}
-                className="
-                  mt-8
-                  bg-blue-600
-                  text-white
-                  px-6
-                  py-3
-                  rounded-xl
-                  hover:bg-blue-700
-                  transition
-                "
+                className="mt-8 bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition"
               >
-                Close
+                {t("specialities.close")}
               </button>
 
             </div>

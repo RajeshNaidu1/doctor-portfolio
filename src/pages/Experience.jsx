@@ -1,29 +1,29 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PageWrapper from "../components/PageWrapper";
+import { useTranslation } from "react-i18next";
 
 export default function Experience() {
+  const { t } = useTranslation();
+
   const experiences = [
     {
       year: "2023 - Present",
-      title: "Senior Consultant Physician",
+      title: t("experience.exp1.title"),
       hospital: "Apollo Hospital",
-      description:
-        "Leading patient consultations, preventive healthcare programs, chronic disease management, and personalized treatment plans.",
+      description: t("experience.exp1.description"),
     },
     {
       year: "2018 - 2023",
-      title: "Consultant Physician",
+      title: t("experience.exp2.title"),
       hospital: "Fortis Hospital",
-      description:
-        "Provided comprehensive healthcare services, diagnosis, treatment planning, and long-term patient wellness management.",
+      description: t("experience.exp2.description"),
     },
     {
       year: "2014 - 2018",
-      title: "Resident Doctor",
+      title: t("experience.exp3.title"),
       hospital: "Manipal Hospital",
-      description:
-        "Worked closely with multidisciplinary teams, gaining extensive experience in internal medicine and patient care.",
+      description: t("experience.exp3.description"),
     },
   ];
 
@@ -38,16 +38,15 @@ export default function Experience() {
 
           <div className="text-center mb-20">
             <p className="uppercase tracking-widest text-blue-600 font-semibold">
-              Professional Journey
+              {t("experience.headingTag")}
             </p>
 
             <h1 className="text-6xl font-bold mt-4 text-slate-900">
-              Experience Timeline
+              {t("experience.heading")}
             </h1>
 
             <p className="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">
-              Years of dedication to patient care,
-              medical excellence, and continuous learning.
+              {t("experience.subHeading")}
             </p>
           </div>
 
@@ -81,7 +80,7 @@ export default function Experience() {
                   "
                 ></div>
 
-                {/* Card */}
+                {/* Experience Card */}
 
                 <div
                   className="
@@ -122,8 +121,10 @@ export default function Experience() {
                     {item.description}
                   </p>
                 </div>
+
               </div>
             ))}
+
           </div>
 
         </div>

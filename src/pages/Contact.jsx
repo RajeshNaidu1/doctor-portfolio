@@ -10,9 +10,13 @@ import {
   FaClock,
 } from "react-icons/fa6";
 
+import { useTranslation } from "react-i18next";
+
 const whatsappLink =
-  "https://wa.me/917386292575?text=Hello%20Doctor,%0A%0AI%20would%20like%20to%20book%20an%20appointment.%0A%0AName:%20%0APhone:%20%0APreferred%20Date:%20%0APreferred%20Time:%20%0AReason%20for%20Consultation:%20";
+  "https://wa.me/916303594165?text=Hi";
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <PageWrapper>
       <Navbar />
@@ -24,24 +28,25 @@ export default function Contact() {
 
           <div className="text-center mb-20">
             <p className="uppercase tracking-widest text-blue-600 font-semibold">
-              Contact Me
+              {t("contact.subtitle")}
             </p>
 
             <h1 className="text-6xl font-bold mt-4 text-slate-900">
-              Book Your Appointment
+              {t("contact.title")}
             </h1>
 
             <p className="mt-6 text-lg text-slate-600 max-w-3xl mx-auto">
-              Reach out for consultations, preventive care,
-              health checkups, and personalized medical guidance.
+              {t("contact.description")}
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-10">
 
-            {/* Contact Information */}
+            {/* Left Side */}
 
             <div className="space-y-6">
+
+              {/* WhatsApp */}
 
               <div className="bg-white p-8 rounded-3xl shadow-lg">
                 <div className="flex items-center gap-4">
@@ -51,11 +56,11 @@ export default function Contact() {
 
                   <div>
                     <h3 className="text-xl font-bold">
-                      WhatsApp Appointment
+                      {t("contact.whatsapp")}
                     </h3>
 
                     <p className="text-slate-600">
-                      Fastest way to schedule a consultation.
+                      {t("contact.whatsappDesc")}
                     </p>
                   </div>
                 </div>
@@ -64,47 +69,45 @@ export default function Contact() {
                   href={whatsappLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="
-                    mt-6
-                    inline-block
-                    bg-green-600
-                    text-white
-                    px-6
-                    py-3
-                    rounded-xl
-                    hover:bg-green-700
-                    transition
-                  "
+                  className="mt-6 inline-block bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition"
                 >
-                  Book via WhatsApp
+                  {t("contact.bookWhatsapp")}
                 </a>
 
                 <p className="mt-4 text-sm text-slate-500">
-                  Average response time: Within 24 hours
+                  {t("contact.response")}
                 </p>
               </div>
+
+              {/* Phone */}
 
               <div className="bg-white p-8 rounded-3xl shadow-lg">
                 <div className="flex items-center gap-4">
                   <FaPhone className="text-blue-600 text-2xl" />
+
                   <div>
                     <h3 className="font-bold">
-                      Phone
+                      {t("contact.phone")}
                     </h3>
+
                     <p className="text-slate-600">
-                      +91 XXXXX XXXXX
+                      +91 6303594165
                     </p>
                   </div>
                 </div>
               </div>
 
+              {/* Email */}
+
               <div className="bg-white p-8 rounded-3xl shadow-lg">
                 <div className="flex items-center gap-4">
                   <FaEnvelope className="text-blue-600 text-2xl" />
+
                   <div>
                     <h3 className="font-bold">
-                      Email
+                      {t("contact.email")}
                     </h3>
+
                     <p className="text-slate-600">
                       doctor@email.com
                     </p>
@@ -112,29 +115,81 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl shadow-lg">
-                <div className="flex items-center gap-4">
-                  <FaLocationDot className="text-blue-600 text-2xl" />
-                  <div>
-                    <h3 className="font-bold">
-                      Clinic Address
-                    </h3>
-                    <p className="text-slate-600">
-                      Bangalore, Karnataka
-                    </p>
-                  </div>
-                </div>
-              </div>
+              {/* Address */}
+
+             <div
+  className="
+    bg-white
+    p-8
+    rounded-3xl
+    shadow-lg
+    hover:shadow-xl
+    transition-all
+    duration-300
+  "
+>
+  <div className="flex items-start gap-4">
+    <FaLocationDot className="text-blue-600 text-2xl mt-1" />
+
+    <div className="w-full">
+      <h3 className="font-bold text-lg">
+        {t("contact.address")}
+      </h3>
+
+      <div className="mt-4 space-y-4">
+
+        {/* Uday's Health Clinic */}
+
+        <a
+          href="https://www.google.com/maps/search/Uday's+Health+Clinic/@12.989836,77.6484,14z?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block rounded-xl p-4 border hover:bg-blue-50 hover:border-blue-300 transition cursor-pointer"
+        >
+          <p className="font-semibold text-slate-900">
+            Uday's Health Clinic
+          </p>
+
+          <p className="text-slate-600 text-sm mt-1">
+            Yendada, Visakhapatnam
+          </p>
+        </a>
+
+        {/* Arogya Hospital */}
+
+        <a
+          href="https://www.google.com/maps?vet=10CAAQoqAOahcKEwjQ_LTV2aqVAxUAAAAAHQAAAAAQCQ..i&sca_esv=59bf8f1ca032d6d5&client=safari&hs=1kUV&pvq=Cg0vZy8xMW40c3A5MDcwIhUKD2Fyb2d5YSBob3NwaXRhbBACGAM&lqi=Ch1hcm9neWEgaG9zcGl0YWwgc3VqYXRoYSBuYWdhckjggdKKk7SAgAhaKxAAEAEYABgBGAIYAyIdYXJvZ3lhIGhvc3BpdGFsIHN1amF0aGEgbmFnYXKSAQhob3NwaXRhbA&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=in&sa=X&ftid=0x3a3967f99d5be38f:0xdd49a56ac2a9ea89"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block rounded-xl p-4 border hover:bg-blue-50 hover:border-blue-300 transition cursor-pointer"
+        >
+          <p className="font-semibold text-slate-900">
+            Arogya Hospital
+          </p>
+
+          <p className="text-slate-600 text-sm mt-1">
+            Sujatha Nagar, Visakhapatnam
+          </p>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+              {/* Hours */}
 
               <div className="bg-white p-8 rounded-3xl shadow-lg">
                 <div className="flex items-center gap-4">
                   <FaClock className="text-blue-600 text-2xl" />
+
                   <div>
                     <h3 className="font-bold">
-                      Consultation Hours
+                      {t("contact.hours")}
                     </h3>
+
                     <p className="text-slate-600">
-                      Mon - Sat : 9:00 AM - 6:00 PM
+                      Mon - Sat : 9:00 AM - 9:00 PM
                     </p>
                   </div>
                 </div>
@@ -142,68 +197,72 @@ export default function Contact() {
 
             </div>
 
-            {/* Right Side Card */}
+            {/* Right Card */}
 
-            <div
-              className="
-                bg-white
-                rounded-3xl
-                shadow-xl
-                p-10
-                flex
-                flex-col
-                justify-center
-              "
-            >
+            <div className="bg-white rounded-3xl shadow-xl p-10 flex flex-col justify-center">
+
               <h2 className="text-4xl font-bold text-slate-900">
-                Ready to Schedule?
+                {t("contact.ready")}
               </h2>
 
               <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-                Whether you need a routine checkup,
-                preventive healthcare consultation,
-                chronic disease management, or a second opinion,
-                I'm here to help.
+                {t("contact.readyDescription")}
               </p>
 
               <div className="mt-10 space-y-4">
 
-                <div className="flex items-center gap-3">
-                  ✅ Personalized Medical Care
-                </div>
-
-                <div className="flex items-center gap-3">
-                  ✅ Preventive Health Planning
-                </div>
-
-                <div className="flex items-center gap-3">
-                  ✅ Long-Term Patient Support
-                </div>
-
-                <div className="flex items-center gap-3">
-                  ✅ Evidence-Based Treatment
-                </div>
+                <div>✅ {t("contact.point1")}</div>
+                <div>✅ {t("contact.point2")}</div>
+                <div>✅ {t("contact.point3")}</div>
+                <div>✅ {t("contact.point4")}</div>
 
               </div>
 
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noreferrer"
-                className="
-                  mt-10
-                  bg-blue-600
-                  text-white
-                  text-center
-                  px-8
-                  py-4
-                  rounded-xl
-                  hover:bg-blue-700
-                  transition
-                "
-              >
-                Schedule Consultation
-              </a>
+              <div className="mt-10 flex flex-col sm:flex-row gap-4">
+
+  <a
+    href="https://book.healthplix.com/dr-dr-yerramsetty-uday-kumar-consulting-physician-yendada-visak_791638"
+    target="_blank"
+    rel="noreferrer"
+    className="
+      flex-1
+      bg-blue-600
+      text-white
+      text-center
+      px-8
+      py-4
+      rounded-xl
+      hover:bg-blue-700
+      transition
+      font-semibold
+    "
+  >
+    {t("contact.onlineConsultation")}
+  </a>
+
+  <a
+    href="https://book.healthplix.com/dr-dr-yerramsetty-uday-kumar-consulting-physician"
+    target="_blank"
+    rel="noreferrer"
+    className="
+      flex-1
+      border-2
+      border-blue-600
+      text-blue-600
+      text-center
+      px-8
+      py-4
+      rounded-xl
+      hover:bg-blue-600
+      hover:text-white
+      transition
+      font-semibold
+    "
+  >
+    {t("contact.inPersonConsultation")}
+  </a>
+
+</div>
 
             </div>
 

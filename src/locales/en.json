@@ -1,0 +1,204 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "specialities": "Specialities",
+    "contact": "Contact"
+  },
+
+  "hero": {
+  "badge": "General Physician",
+  "title": "Dr. Uday",
+  "subtitle": "Dedicated to compassionate, evidence-based medical care.",
+  "description": "With over a decade of experience providing personalized healthcare and long-term wellness support.",
+  "button1": "Book Appointment",
+  "button2": "Learn More"
+},
+"stats": {
+  "experience": "Years Experience",
+  "patients": "Patients Treated",
+  "specializations": "Specializations",
+  "awards": "Awards & Honors"
+},
+"aboutSection": {
+  "smallTitle": "About Me",
+  "title": "Committed to Your",
+  "titleBlue": "Health & Well-being",
+
+  "description": "I believe in building long-term relationships with my patients based on trust, respect, and open communication. My focus is on preventive care and evidence-based treatment plans.",
+
+  "point1": "Patient-centered approach",
+  "point2": "Evidence-based treatments",
+  "point3": "Compassionate & personalized care",
+  "point4": "Continuous learning & innovation",
+
+  "imageTitle1": "Your Health",
+  "imageTitle2": "is My Priority",
+
+  "button": "More About Me →"
+},
+"contactStrip": {
+  "addressTitle": "Clinic Address",
+  "address": "Yendada, Visakhapatnam",
+  "hoursTitle": "Consultation Hours",
+  "hours": "Mon - Sat • 9:00 AM - 9:00 PM",
+  "phoneTitle": "Emergency Care",
+  "emailTitle": "Email Us"
+},
+"about": {
+  "heroTag": "About Me",
+  "heroTitle": "Compassionate Healthcare, Backed by Experience",
+  "heroDescription": "Dedicated physician committed to providing patient-centered healthcare through evidence-based medicine, preventive care, and personalized treatment plans. My goal is to help patients achieve better health outcomes while building long-term trust and confidence.",
+
+  "yearsExperience": "Years Experience",
+  "patients": "Patients Treated",
+
+  "qualifications": "Qualifications & Education",
+
+  "mbbs": "Bachelor of Medicine & Surgery",
+  "md": "Internal Medicine",
+  "fellowship": "Advanced Clinical Practice",
+
+  "languagesTitle": "Languages Spoken",
+  "communication": "Communication",
+
+  "english": "English",
+  "telugu": "Telugu",
+  "hindi": "Hindi",
+
+  "consultationAreas": "Consultation Areas",
+
+  "diabetes": "Diabetes",
+  "hypertension": "Hypertension",
+  "generalMedicine": "General Medicine",
+  "preventiveCare": "Preventive Care",
+  "healthCheckups": "Health Checkups",
+  "lifestyle": "Lifestyle Disorders",
+  "internalMedicine": "Internal Medicine",
+  "chronicDisease": "Chronic Disease Management"
+},
+"experience": {
+  "headingTag": "Professional Journey",
+  "heading": "Experience Timeline",
+  "subHeading": "Years of dedication to patient care, medical excellence, and continuous learning.",
+
+  "exp1": {
+    "title": "Senior Consultant Physician",
+    "description": "Leading patient consultations, preventive healthcare programs, chronic disease management, and personalized treatment plans."
+  },
+
+  "exp2": {
+    "title": "Consultant Physician",
+    "description": "Provided comprehensive healthcare services, diagnosis, treatment planning, and long-term patient wellness management."
+  },
+
+  "exp3": {
+    "title": "Resident Doctor",
+    "description": "Worked closely with multidisciplinary teams, gaining extensive experience in internal medicine and patient care."
+  }
+},
+  "specialities": {
+    "subtitle": "Areas of Expertise",
+    "heading": "Medical Specialities",
+    "description": "Providing comprehensive healthcare services with a focus on prevention, diagnosis, treatment, and long-term patient wellness.",
+
+    "learnMore": "Learn More",
+    "close": "Close",
+
+    "ctaTitle": "Need Medical Consultation?",
+    "ctaDescription": "Schedule an appointment today and receive personalized healthcare guidance tailored to your needs.",
+    "bookAppointment": "Book Appointment",
+
+    "preventive": {
+      "title": "Preventive Care",
+      "description": "Comprehensive health screenings, vaccinations, wellness planning, and disease prevention strategies.",
+      "d1": "Annual health checkups",
+      "d2": "Vaccination guidance",
+      "d3": "Lifestyle counseling",
+      "d4": "Early disease detection"
+    },
+
+    "general": {
+      "title": "General Medicine",
+      "description": "Diagnosis and treatment of common illnesses with a focus on long-term patient wellbeing.",
+      "d1": "Fever and infections",
+      "d2": "Respiratory illnesses",
+      "d3": "Digestive disorders",
+      "d4": "Routine medical care"
+    },
+
+    "internal": {
+      "title": "Internal Medicine",
+      "description": "Specialized care for chronic diseases, complex medical conditions, and adult healthcare.",
+      "d1": "Diabetes management",
+      "d2": "Hypertension care",
+      "d3": "Thyroid disorders",
+      "d4": "Adult healthcare"
+    },
+
+    "checkups": {
+      "title": "Health Checkups",
+      "description": "Routine medical evaluations and personalized health assessments for early detection.",
+      "d1": "Executive health packages",
+      "d2": "Laboratory investigations",
+      "d3": "Risk assessment",
+      "d4": "Preventive screening"
+    },
+
+    "chronic": {
+      "title": "Chronic Disease Management",
+      "description": "Long-term management plans for diabetes, hypertension, thyroid disorders, and more.",
+      "d1": "Long-term monitoring",
+      "d2": "Medication management",
+      "d3": "Lifestyle modifications",
+      "d4": "Regular follow-ups"
+    },
+
+    "consultation": {
+      "title": "Patient Consultation",
+      "description": "Personalized consultations focused on accurate diagnosis, treatment planning, and recovery.",
+      "d1": "Personalized treatment plans",
+      "d2": "Second opinions",
+      "d3": "Medical counseling",
+      "d4": "Follow-up consultations"
+    }
+  },
+
+"contact": {
+  "subtitle": "Contact Me",
+  "title": "Book Your Appointment",
+  "heading": "Book Your Appointment",
+  "description": "Reach out for consultations, preventive care, health checkups, and personalized medical guidance.",
+
+  "whatsapp": "WhatsApp Appointment",
+  "whatsappDesc": "Fastest way to schedule a consultation.",
+  "bookWhatsapp": "Book via WhatsApp",
+  "response": "Average response time: Within 24 hours",
+
+  "phone": "Phone",
+  "email": "Email",
+  "address": "Clinic Address",
+  "location": "Yendada, Visakhapatnam",
+
+  "hours": "Consultation Hours",
+  "timing": "Mon - Sat : 9:00 AM - 9:00 PM",
+
+  "ready": "Ready to Schedule?",
+  "readyDescription": "Whether you need a routine checkup, preventive healthcare consultation, chronic disease management, or a second opinion, I'm here to help.",
+
+  "point1": "Personalized Medical Care",
+  "point2": "Preventive Health Planning",
+  "point3": "Long-Term Patient Support",
+  "point4": "Evidence-Based Treatment",
+  "onlineConsultation": "Online Consultation",
+  "inPersonConsultation": "In-Person Consultation",
+  "schedule": "Schedule Consultation"
+},
+"footer": {
+  "description": "Dedicated to providing compassionate, evidence-based healthcare and personalized treatment plans for every patient.",
+  "quickLinks": "Quick Links",
+  "contact": "Contact",
+  "copyright": "All Rights Reserved."
+}
+}

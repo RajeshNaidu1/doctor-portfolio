@@ -1,14 +1,52 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [languageOpen, setLanguageOpen] = useState(false);
+
+  const languageRef = useRef(null);
+
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem("language", lang);
+    setLanguageOpen(false);
+  };
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        languageRef.current &&
+        !languageRef.current.contains(event.target)
+      ) {
+        setLanguageOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () =>
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
+  }, []);
 
   const navLinkClass = ({ isActive }) =>
     isActive
       ? "text-blue-600 font-semibold border-b-2 border-blue-600 pb-1"
       : "text-slate-700 hover:text-blue-600 transition";
+
+  const currentLanguage =
+    i18n.language === "te"
+      ? "తెలుగు"
+      : i18n.language === "hi"
+      ? "हिन्दी"
+      : "English";
 
   return (
     <nav
@@ -36,43 +74,154 @@ export default function Navbar() {
 
           {/* Logo */}
 
-          <h1 className="text-2xl font-bold text-slate-900">
-            Dr. Uday
-          </h1>
+<NavLink to="/" className="flex items-center">
+  <img
+    src="/logo.png"
+    alt="Uday's Health Care Logo"
+    className="
+      h-14
+      w-14
+      rounded-full
+      object-cover
+      border-2
+      border-blue-600
+      shadow-md
+      hover:scale-105
+      transition-all
+      duration-300
+    "
+  />
+</NavLink>
 
           {/* Desktop Menu */}
 
-          <div className="hidden md:flex gap-10">
+          <div className="hidden md:flex items-center gap-10">
 
             <NavLink to="/" className={navLinkClass}>
-              Home
+              {t("navbar.home")}
             </NavLink>
 
             <NavLink to="/about" className={navLinkClass}>
-              About
+              {t("navbar.about")}
             </NavLink>
 
             <NavLink to="/experience" className={navLinkClass}>
-              Experience
+              {t("navbar.experience")}
             </NavLink>
 
             <NavLink to="/specialities" className={navLinkClass}>
-              Specialities
+              {t("navbar.specialities")}
             </NavLink>
 
             <NavLink to="/contact" className={navLinkClass}>
-              Contact
+              {t("navbar.contact")}
             </NavLink>
+
+            {/* Language Dropdown */}
+
+            <div
+              className="relative"
+              ref={languageRef}
+            >
+              <button
+                onClick={() =>
+                  setLanguageOpen(!languageOpen)
+                }
+                className="
+                  flex
+                  items-center
+                  gap-2
+                  px-4
+                  py-2
+                  rounded-xl
+                  border
+                  border-slate-200
+                  hover:bg-blue-50
+                  transition
+                  font-medium
+                "
+              >
+                🌐 {currentLanguage}
+              </button>
+
+              {languageOpen && (
+                <div
+                  className="
+                    absolute
+                    right-0
+                    mt-3
+                    w-44
+                    bg-white
+                    rounded-xl
+                    shadow-xl
+                    border
+                    overflow-hidden
+                    z-50
+                  "
+                >
+                  <button
+                    onClick={() =>
+                      changeLanguage("en")
+                    }
+                    className="
+                      w-full
+                      text-left
+                      px-4
+                      py-3
+                      hover:bg-blue-50
+                    "
+                  >
+                    🇬🇧 English
+                  </button>
+
+                  <button
+                    onClick={() =>
+                      changeLanguage("te")
+                    }
+                    className="
+                      w-full
+                      text-left
+                      px-4
+                      py-3
+                      hover:bg-blue-50
+                    "
+                  >
+                    🇮🇳 తెలుగు
+                  </button>
+
+                  <button
+                    onClick={() =>
+                      changeLanguage("hi")
+                    }
+                    className="
+                      w-full
+                      text-left
+                      px-4
+                      py-3
+                      hover:bg-blue-50
+                    "
+                  >
+                    🇮🇳 हिन्दी
+                  </button>
+                </div>
+              )}
+            </div>
 
           </div>
 
-          {/* Mobile Button */}
+          {/* Mobile Menu Button */}
 
           <button
             className="md:hidden text-2xl"
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() =>
+              setMenuOpen(!menuOpen)
+            }
           >
-            {menuOpen ? <FaXmark /> : <FaBars />}
+            {menuOpen ? (
+              <FaXmark />
+            ) : (
+              <FaBars />
+            )}
           </button>
 
         </div>
@@ -95,7 +244,7 @@ export default function Navbar() {
               className={navLinkClass}
               onClick={() => setMenuOpen(false)}
             >
-              Home
+              {t("navbar.home")}
             </NavLink>
 
             <NavLink
@@ -103,7 +252,7 @@ export default function Navbar() {
               className={navLinkClass}
               onClick={() => setMenuOpen(false)}
             >
-              About
+              {t("navbar.about")}
             </NavLink>
 
             <NavLink
@@ -111,7 +260,7 @@ export default function Navbar() {
               className={navLinkClass}
               onClick={() => setMenuOpen(false)}
             >
-              Experience
+              {t("navbar.experience")}
             </NavLink>
 
             <NavLink
@@ -119,7 +268,7 @@ export default function Navbar() {
               className={navLinkClass}
               onClick={() => setMenuOpen(false)}
             >
-              Specialities
+              {t("navbar.specialities")}
             </NavLink>
 
             <NavLink
@@ -127,11 +276,52 @@ export default function Navbar() {
               className={navLinkClass}
               onClick={() => setMenuOpen(false)}
             >
-              Contact
+              {t("navbar.contact")}
             </NavLink>
+
+            {/* Mobile Language */}
+
+            <div className="pt-2 border-t">
+
+              <p className="text-sm font-semibold mb-3">
+                🌐 Language
+              </p>
+
+              <button
+                onClick={() => {
+                  changeLanguage("en");
+                  setMenuOpen(false);
+                }}
+                className="block w-full text-left py-2"
+              >
+                🇬🇧 English
+              </button>
+
+              <button
+                onClick={() => {
+                  changeLanguage("te");
+                  setMenuOpen(false);
+                }}
+                className="block w-full text-left py-2"
+              >
+                🇮🇳 తెలుగు
+              </button>
+
+              <button
+                onClick={() => {
+                  changeLanguage("hi");
+                  setMenuOpen(false);
+                }}
+                className="block w-full text-left py-2"
+              >
+                🇮🇳 हिन्दी
+              </button>
+
+            </div>
 
           </div>
         )}
+
       </div>
     </nav>
   );
