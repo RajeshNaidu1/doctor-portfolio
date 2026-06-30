@@ -15,7 +15,7 @@ if (redirect) {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/doctor-portfolio">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>
